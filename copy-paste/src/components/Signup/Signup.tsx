@@ -1,15 +1,9 @@
 import * as Yup from "yup";
 import { useForm, yupResolver } from "@mantine/form";
-import {
-  NumberInput,
-  TextInput,
-  Button,
-  Box,
-  Group,
-  PasswordInput,
-} from "@mantine/core";
+import { TextInput, Button, Box, Group, PasswordInput } from "@mantine/core";
 
 import Shell from "../Shell/Shell";
+import { post } from "../../utils/api";
 
 const schema = Yup.object().shape({
   email: Yup.string().email("Invalid email"),
@@ -34,7 +28,13 @@ export default function Signup() {
   return (
     <Shell>
       <Box sx={{ maxWidth: 340 }} mx="auto">
-        <form onSubmit={form.onSubmit((values) => console.log(values))}>
+        <form
+          onSubmit={form.onSubmit(async (values) => {
+            console.log(values);
+            const response = await post("api/v1/user/signup", values);
+            console.log(response);
+          })}
+        >
           <TextInput
             required
             label="Email"

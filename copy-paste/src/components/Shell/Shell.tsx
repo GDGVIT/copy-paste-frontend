@@ -52,7 +52,7 @@ function MainLink({ icon, color, label, link }: MainLinkProps) {
 }
 
 const data = [
-  { icon: <MdHome size={16} />, color: "grape", label: "Home", link: "/" },
+  { icon: <MdHome size={16} />, color: "blue", label: "Home", link: "/" },
   {
     icon: <MdLogin size={16} />,
     color: "blue",
@@ -61,7 +61,7 @@ const data = [
   },
   {
     icon: <RiLoginBoxFill size={16} />,
-    color: "teal",
+    color: "blue",
     label: "Create an Account",
     link: "/signup",
   },

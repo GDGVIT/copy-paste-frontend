@@ -1,10 +1,51 @@
-import React from "react";
+import * as Yup from "yup";
+import { useForm, yupResolver } from "@mantine/form";
+import { TextInput, Button, Box, Group, PasswordInput } from "@mantine/core";
+
 import Shell from "../Shell/Shell";
+import { post } from "../../utils/api";
+
+const schema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Please enter an email"),
+  password: Yup.string().required("Please Enter a Password"),
+});
 
 export default function Login() {
+  const form = useForm({
+    schema: yupResolver(schema),
+    initialValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   return (
     <Shell>
-      <h1>Login</h1>
+      <Box sx={{ maxWidth: 340 }} mx="auto">
+        <form
+          onSubmit={form.onSubmit(async (values) => {
+            console.log(values);
+            const response = await post("api/v1/user/login", values);
+            console.log(response);
+          })}
+        >
+          <TextInput
+            required
+            label="Email"
+            placeholder="example@mail.com"
+            {...form.getInputProps("email")}
+          />
+          <PasswordInput
+            required
+            label="Password"
+            {...form.getInputProps("password")}
+          />
+
+          <Group position="right" mt="xl">
+            <Button type="submit">Submit</Button>
+          </Group>
+        </form>
+      </Box>
     </Shell>
   );
 }
