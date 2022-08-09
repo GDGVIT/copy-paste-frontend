@@ -1,0 +1,39 @@
+{
+  "name": "copy-paste",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@mantine/core": "^5.0.0",
+    "@mantine/form": "^5.0.0",
+    "@mantine/hooks": "^5.0.0",
+    "@tabler/icons": "^1.78.1",
+    "@tauri-apps/api": "^1.0.2",
+    "@tauri-apps/tauri-forage": "^1.0.0-beta.2",
+    "axios": "^0.27.2",
+    "firebase": "^9.9.2",
+    "node-machine-id": "^1.1.12",
+    "qs": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "6",
+    "tauri-plugin-store-api": "https://github.com/tauri-apps/tauri-plugin-store#dev",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+  }
+}
