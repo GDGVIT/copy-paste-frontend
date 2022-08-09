@@ -10,16 +10,22 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.12",
-    "@mantine/form": "^4.2.12",
-    "@mantine/hooks": "^4.2.12",
+    "@emotion/react": "^11.9.3",
+    "@mantine/core": "^5.0.0",
+    "@mantine/form": "^5.0.0",
+    "@mantine/hooks": "^5.0.0",
+    "@tabler/icons": "^1.78.1",
     "@tauri-apps/api": "^1.0.2",
+    "@tauri-apps/tauri-forage": "^1.0.0-beta.2",
     "axios": "^0.27.2",
+    "firebase": "^9.9.2",
+    "node-machine-id": "^1.1.12",
     "qs": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "6",
+    "tauri-plugin-store-api": "https://github.com/tauri-apps/tauri-plugin-store#dev",
     "yup": "^0.32.11"
   },
   "devDependencies": {

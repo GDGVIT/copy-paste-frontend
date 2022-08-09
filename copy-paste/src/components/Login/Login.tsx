@@ -3,7 +3,7 @@ import { useForm, yupResolver } from "@mantine/form";
 import { TextInput, Button, Box, Group, PasswordInput } from "@mantine/core";
 
 import Shell from "../Shell/Shell";
-import { post } from "../../utils/api";
+import { login } from "../../utils/api";
 
 const schema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Please enter an email"),
@@ -12,7 +12,7 @@ const schema = Yup.object().shape({
 
 export default function Login() {
   const form = useForm({
-    schema: yupResolver(schema),
+    validate: yupResolver(schema),
     initialValues: {
       email: "",
       password: "",
@@ -25,7 +25,7 @@ export default function Login() {
         <form
           onSubmit={form.onSubmit(async (values) => {
             console.log(values);
-            const response = await post("api/v1/user/login", values);
+            const response = await login(values);
             console.log(response);
           })}
         >
